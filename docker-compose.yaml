@@ -21,3 +21,11 @@ services:
     ports:
       - 8888:8888
     command: "start-notebook.sh --NotebookApp.token="
+
+  qdrant:
+    image: qdrant/qdrant:v1.14.1
+    volumes:
+      - ./qdrant_storage:/qdrant/storage:z
+    ports:
+      - 6333:6333
+      - 6334:6334
